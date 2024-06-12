@@ -280,7 +280,7 @@ header {
 }
 
 .content-container p {
-    color: var(--very-dark-black-blue);
+    color: var(--very-dark-desaturated-blue);
     line-height: 1.7;
 }
 
@@ -403,6 +403,7 @@ footer img {
 
     .hero {
         background: linear-gradient(90deg, var(--very-light-red) 10%, var(--light-red));
+        height: 70vh;
     }
 
     .hero h1 {
@@ -533,6 +534,7 @@ footer img {
         background-size: cover;
         transform: translateX(60px);
         z-index: 999;
+        aspect-ratio: 1/1;
     }
 
     .second-container h2 {
@@ -547,6 +549,10 @@ footer img {
         display: flex;
         flex-direction: column;
         gap: 30px;
+    }
+
+    .second-content-container .content-container h3 {
+        color: var(--very-dark-blue);
     }
 
     .second-content-container .content-container h3, .fourth-container .content-container h3 {
@@ -574,6 +580,7 @@ footer img {
         justify-content: center;
         align-items: center;
         margin-top: 0;
+        height: 70vh;
     }
 
     .third-container img {
@@ -610,6 +617,7 @@ footer img {
         width: 100%;
         height: 100vh;
         transform: translateX(-120px);
+        aspect-ratio: 1/1;
     }
 
     .fourth-container .content-container {

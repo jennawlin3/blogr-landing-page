@@ -25,9 +25,17 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     overflow-x: hidden;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
+    width: 100%;
     height: 70px;
     background: var(--very-light-red);
     display: flex;
@@ -176,6 +184,9 @@ header {
     height: 80vh;
     border-radius: 0 0 0 70px;
     position: relative;
+    overflow: hidden;
+    padding: 40px;
+    width: 100%;
 }
 
 .hero::before {
@@ -246,12 +257,17 @@ header {
 }
 
 .second-container {
-    padding: 40px;
     background-color: white;
     padding-top: 100px;
     margin-top: 0px;
     position: relative;
     z-index: 1;
+}
+
+.second-container img {
+    width: 80vw;
+    max-width: 500px;
+    height: 100%;
 }
 
 .second-container h2 {
@@ -271,6 +287,7 @@ header {
 
 .content-container {
     margin: 20px 0;
+    padding: 0 40px;
 }
 
 .content-container h3 {
@@ -286,31 +303,36 @@ header {
 
 .third-container {
     display: flex;
-    height: 80vh;
+    height: 500px;
     flex-direction: column-reverse;
     justify-content: flex-start;
     background-color: var(--very-dark-gray-blue);
     position: relative;
     margin-top: 250px;
-    border-radius: 0 70px 0 70px;
+    border-radius: 0 170px 0 170px;
 }
+
 .third-container::before {
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
     background: url(../images/bg-pattern-circles.svg);
-    background-position: 50% 500%;
+    background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 0;
 }
 
 .third-container img {
-    width: 100%;
-    height: 80vh;
+    width: 100vw;
+    max-width: 600px;
+    margin: auto;
+    height: 100%;
     position: absolute;
-    top: -200px;
+    top: -250px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .third-container h2 {
@@ -334,7 +356,14 @@ header {
     flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.fourth-container img {
+    width: 100vw;
+    height: 100%;
+    max-width: 600px;
 }
 
 .fourth-container h3 {
@@ -355,6 +384,7 @@ footer {
     background-color: var(--very-dark-black-blue);
     padding: 40px;
     border-radius: 0 70px 0 0;
+    width: 100%;
 }
 
 footer img {
@@ -392,18 +422,20 @@ footer img {
     font-weight: 600;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
     body {
         overflow-x: hidden;
     }
 
     header {
         background: linear-gradient(90deg, var(--very-light-red) 10%, var(--light-red));
+        max-width: 1800px;
     }
 
     .hero {
         background: linear-gradient(90deg, var(--very-light-red) 10%, var(--light-red));
-        height: 70vh;
+        height: 700px;
+        max-width: 1800px;
     }
 
     .hero h1 {
@@ -526,15 +558,24 @@ footer img {
     .second-content-container {
         flex-direction: row;
         width: 100vw;
+        max-width: 1800px;
+    }
+
+    .second-content-container picture {
+        display: flex;
+        width: 50vw;
+        max-width: 900px;
+        position: relative;
     }
 
     .second-content-container img {
         width: 100%;
-        height: 100vh;
+        height: auto;
         background-size: cover;
-        transform: translateX(60px);
+        transform: translateX(160px);
         z-index: 999;
         aspect-ratio: 1/1;
+        max-width: 900px;
     }
 
     .second-container h2 {
@@ -571,7 +612,9 @@ footer img {
 
     .second-container .content-container {
         padding: 0 40px;
-        width: 60vw;
+        width: 45vw;
+        max-width: 890;
+        max-width: 1000px;
     }
 
     .third-container {
@@ -580,19 +623,32 @@ footer img {
         justify-content: center;
         align-items: center;
         margin-top: 0;
-        height: 70vh;
+        height: 700px;
+        width: 100%;
+        max-width: 1800px;
+        padding: 70px 0;
+    }
+
+    .third-container picture {
+        display: flex;
+        width: 50vw;
+        max-width: 900px;
+        position: relative;
     }
 
     .third-container img {
-        position: relative;
-        top: 0;
-        width: 40vw;
+        width: 480px;
         height: auto;
         z-index: 1;
     }
 
     .third-container h2 {
         font-size: 2.5em;
+        padding:  0 0 0 0;
+    }
+
+    .third-container .content-container {
+        padding:  0 90px 0 0;
     }
 
     .content-container {
@@ -605,23 +661,31 @@ footer img {
 
     .third-container p {
         margin: 0;
-        padding: 50px;
+        padding: 0;
         text-align: left;
     }
 
     .fourth-container {
         flex-direction: row-reverse;
+        max-width: 1800px;
+    }
+
+    .fourth-container picture {
+        width: 100%;
+        display: flex;
     }
 
     .fourth-container img {
         width: 100%;
-        height: 100vh;
-        transform: translateX(-120px);
+        height: auto;
+        object-fit: cover;
+        transform: translateX(-160px);
         aspect-ratio: 1/1;
     }
 
     .fourth-container .content-container {
         width: 60vw;
+        max-width: 800px;
         padding-right:40px;
     }
 
@@ -629,6 +693,7 @@ footer img {
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-evenly;
+        max-width: 1800px;
     }
 }
 
